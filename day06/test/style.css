@@ -1,0 +1,237 @@
+/* 공통 초기화 및 변수 설정 */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0; 
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #f8f9fa;
+    color: #1f2937;
+    font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* 레이아웃 컨테이너 */
+.container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 24px 20px;
+    flex: 1;
+}
+
+/* 네비게이션바 스타일 */
+.header {
+    background-color: #ffffff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 16px 20px;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #2563eb;
+}
+
+.menu {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #4b5563;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.menu a:hover {
+    color: #2563eb;
+}
+
+/* 섹션 공통 스타일 */
+.section {
+    margin-bottom: 48px;
+}
+
+.section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #111827;
+    border-bottom: 2px solid #2563eb;
+    padding-bottom: 8px;
+    display: inline-block;
+}
+
+/* 소개 섹션 */
+.intro-section {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 24px;
+    align-items: center;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.intro-content .lead {
+    font-size: 1.05rem;
+    color: #4b5563;
+    margin-top: 12px;
+}
+
+.intro-image img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* 작업 카드 그리드 */
+.cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+}
+
+.card {
+    padding: 24px;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    background-color: #ffffff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+}
+
+.card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    color: #1f2937;
+}
+
+.card p {
+    color: #6b7280;
+    font-size: 0.95rem;
+}
+
+/* 연락처 폼 스타일 */
+fieldset {
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 24px;
+    background-color: #ffffff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+legend {
+    padding: 0 10px;
+    color: #2563eb;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+form label {
+    display: block;
+    margin-top: 16px;
+    margin-bottom: 6px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #374151;
+}
+
+form input,
+form textarea {
+    display: block;
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    background-color: #fff;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+form input:focus,
+form textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+form button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    background-color: #2563eb;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+form button:hover {
+    background-color: #1d4ed8;
+}
+
+/* 푸터 스타일 */
+.footer {
+    text-align: center;
+    padding: 24px;
+    background-color: #ffffff;
+    border-top: 1px solid #e5e7eb;
+    color: #9ca3af;
+    font-size: 0.85rem;
+}
+
+/* 반응형 미디어 쿼리 (모바일 퍼스트 확장) */
+@media (min-width: 640px) {
+    .cards { 
+        grid-template-columns: repeat(2, 1fr); 
+    }
+    
+    .intro-section {
+        flex-direction: row;
+        text-align: left;
+        justify-content: space-between;
+        gap: 40px;
+    }
+    
+    .intro-image img {
+        width: 180px;
+        height: 180px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .cards { 
+        grid-template-columns: repeat(3, 1fr); 
+    }
+}
